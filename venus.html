@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 <title>Venus</title>
-
+<link rel="stylesheet" type="text/css" href="style.css">
 <script id="vertex-shader" type="x-shader/x-vertex">
 attribute vec2 vPosition;
 attribute vec2 vTexCoord;
@@ -52,22 +52,41 @@ void main() {
 </head>
 
 <body>
-<canvas id="gl-canvas" width="512" height="512">
-Oops ... your browser doesn't support the HTML5 canvas element
-</canvas>
 <div>
-  <select id="filters">
-    <option value="original" selected>Original</option>
-    <option value="roberts">Roberts</option>
-    <option value="edgeDetection1">Edge Detection 1</option>
-    <option value="edgeDetection2">Edge Detection 2</option>
-    <option value="sharpen1">Sharpen 1</option>
-    <option value="sharpen2">Sharpen 2</option>
-    <option value="blur">Blur</option>
-    <option value="embos1">Embos 1</option>
-    <option value="embos2">Embos 2</option>
-    <option value="original">Original</option>
-  </select>
+  <table align="center">
+    <tr>
+      <td align="center" style="padding:0 15px 0 15px;">
+        <img id="original-image" src="pluto.jpg" />
+      </td>
+      <td align="center">
+        <canvas id="gl-canvas" width="512" height="512">
+        Oops ... your browser doesn't support the HTML5 canvas element
+        </canvas>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" style="padding:0 40px 0 40px;">
+        <select id="image-menu">
+          <option value="pluto.jpg" selected>Pluto</option>
+          <option value="img.png">Rocket</option>
+          <option value="photo.jpg">Flower</option>
+        </select>
+      </td>
+      <td align="center">
+        <select id="filters">
+          <option value="original" selected>Original</option>
+          <option value="roberts">Roberts</option>
+          <option value="edgeDetection1">Edge Detection 1</option>
+          <option value="edgeDetection2">Edge Detection 2</option>
+          <option value="sharpen1">Sharpen 1</option>
+          <option value="sharpen2">Sharpen 2</option>
+          <option value="blur">Blur</option>
+          <option value="embos1">Embos 1</option>
+          <option value="embos2">Embos 2</option>
+        </select>
+      </td>
+    </tr>
+  </table>
 </div>
 </body>
 </html>
