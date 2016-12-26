@@ -53,10 +53,9 @@ var kernels = {
 var filter = kernels["original"];
 var fKernel;
 
-
 window.onload = function load() {
   image = new Image();
-  image.src="img.png";
+  image.src="pluto.jpg";
   image.onload = function() {
     init();
   };
@@ -105,14 +104,18 @@ function init() {
   gl.uniform2f(vTexSize, canvas.width, canvas.height);
 
   fKernel = gl.getUniformLocation(program, "fKernel");
-
   document.getElementById("filters").onchange = function (event) { 
     console.log(event.target.value);
     filter = kernels[event.target.value];
     render();
   };
 
-
+  document.getElementById("image-menu").onchange = function (event) { 
+    console.log(event.target.value);
+    image.src = event.target.value;
+    document.getElementById("original-image").src = event.target.value;
+    render();
+  };
   render();
 }
 
